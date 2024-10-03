@@ -25,6 +25,9 @@ public class Main {
                     case 5:
                         exercise5();
                         break;
+                    case 6:
+                        exercise6();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -35,6 +38,24 @@ public class Main {
             }
         }
     }
+    public static void exercise6(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter a integer:");
+        try{
+            int num = scan.nextInt();
+            String numString = Integer.toString(num);
+            int sum = 0;
+            for(int i = 0; i < numString.length(); i++){
+                sum = sum + Integer.parseInt(String.valueOf(numString.charAt(i)));
+            }
+            System.out.println("Sum is: " + sum);
+        }
+        catch(Exception e){
+            System.out.println("Not valid integer, closing this");
+            System.exit(0);
+        }
+    }
+
     public static void exercise5(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a string:");
