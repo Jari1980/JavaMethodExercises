@@ -22,8 +22,24 @@ public class Main {
             }
         }
     }
-    public static void exercise1(){
 
+    public static void exercise1() {
+        var scan = new Scanner(System.in);
+        double min = Double.MAX_VALUE;
+        double temp;
+        try {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Enter a number: ");
+                temp = scan.nextDouble();
+                if (temp < min) {
+                    min = temp;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Not a valid number, program closing");
+            System.exit(0);
+        }
+        System.out.println("The smallest number is " + min);
     }
-
 }
+
