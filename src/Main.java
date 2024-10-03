@@ -22,6 +22,9 @@ public class Main {
                     case 4:
                         exercise4();
                         break;
+                    case 5:
+                        exercise5();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -32,6 +35,23 @@ public class Main {
             }
         }
     }
+    public static void exercise5(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String userString = scan.nextLine();
+        String textStripped = userString.strip(); //removing whitespace from eventual start and ending
+        int spceCount = 0;
+        for(int i = 0; i < textStripped.length(); i++){
+            if(i > 0 && textStripped.charAt(i - 1) != ' '){
+                if(textStripped.charAt(i) == ' '){
+                    spceCount++;
+                }
+            }
+        }
+        spceCount++; //Assuming empty "" from user counts as 1 string, also needed for rest
+        System.out.println("Number of words: " + spceCount);
+    }
+
     public static void exercise4(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a string:");
