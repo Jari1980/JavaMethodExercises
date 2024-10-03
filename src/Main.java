@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +13,9 @@ public class Main {
                     case 1:
                         exercise1();
                         break;
+                    case 2:
+                        exercise2();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -20,6 +24,21 @@ public class Main {
                 System.out.println("Closing program");
                 System.exit(0);
             }
+        }
+    }
+    public static void exercise2(){
+        var scan = new Scanner(System.in);
+        ArrayList<Double> nums = new ArrayList<Double>();
+        try {
+            for (int i = 0; i < 3; i++) {
+                System.out.println("Enter a number: ");
+                nums.add(scan.nextDouble());
+            }
+            double average = nums.stream().mapToDouble(val -> val).average().orElse(0);
+            System.out.println("The average value is " + average);
+        } catch (Exception e) {
+            System.out.println("Not a valid number, program closing");
+            System.exit(0);
         }
     }
 
