@@ -31,6 +31,9 @@ public class Main {
                     case 7:
                         exercise7();
                         break;
+                    case 8:
+                        exercise8();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -41,6 +44,47 @@ public class Main {
             }
         }
     }
+    public static void exercise8(){
+        var scan = new Scanner(System.in);
+        double invested = 0;
+        double rate = 0;
+        double rateInc = 0;
+        int years;
+        double saved = 0;
+        try{
+            System.out.println("Investment amount:");
+            invested = scan.nextDouble();
+        }
+        catch(Exception e){
+            System.out.println("Bad number, closing");
+            System.exit(0);
+        }
+        try{
+            System.out.println("Interest:");
+            rate = scan.nextDouble();
+        }
+        catch(Exception e){
+            System.out.println("Bad number, closing");
+            System.exit(0);
+        }
+        try{
+            System.out.println("Number of years:");
+            years = scan.nextInt();
+            System.out.println(("Years     FutureValue"));
+            for(int i = 1; i <= years; i++){
+                for(int j = 0; j < 12; j++){
+                    rateInc = (invested * rate / 100) / 12;
+                    invested = invested + rateInc;
+                }
+                System.out.println(i + "         " + invested);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Bad number, closing");
+            System.exit(0);
+        }
+    }
+
     public static void exercise7(){
         //From wiki pentagonal number: m(3m -1)/2
         int numM = 1;
