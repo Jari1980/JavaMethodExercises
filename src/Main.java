@@ -28,6 +28,9 @@ public class Main {
                     case 6:
                         exercise6();
                         break;
+                    case 7:
+                        exercise7();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -38,6 +41,19 @@ public class Main {
             }
         }
     }
+    public static void exercise7(){
+        //From wiki pentagonal number: m(3m -1)/2
+        int numM = 1;
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 10; j++){
+                int pent = numM * (3 * numM - 1) / 2;
+                System.out.format("%8d", pent);
+                numM++;
+            }
+            System.out.println();
+        }
+    }
+
     public static void exercise6(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a integer:");
