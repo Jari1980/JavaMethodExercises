@@ -19,6 +19,9 @@ public class Main {
                     case 3:
                         exercise3();
                         break;
+                    case 4:
+                        exercise4();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -29,6 +32,21 @@ public class Main {
             }
         }
     }
+    public static void exercise4(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter a string:");
+        String userString = scan.nextLine();
+        userString.toLowerCase();
+        int vowelCount = 0;
+        for(int i = 0; i < userString.length(); i++){
+            if (userString.charAt(i) == 'a' || userString.charAt(i) == 'e' || userString.charAt(i) == 'i'  ||
+            userString.charAt(i) == 'o' || userString.charAt(i) == 'u' || userString.charAt(i) == 'y'){
+                vowelCount++;
+            }
+        }
+        System.out.println("Number of vowels in the string: " + vowelCount);
+    }
+
     public static void exercise3(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a string:");
