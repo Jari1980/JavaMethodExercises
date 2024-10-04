@@ -63,6 +63,9 @@ public class Main {
                     case 16:
                         exercise16();
                         break;
+                    case 17:
+                        exercise17();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -73,6 +76,26 @@ public class Main {
             }
         }
     }
+    public static void exercise17(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter a number with several integers: ");
+        try{
+            int num = scan.nextInt();
+            String numS = String.valueOf(num);
+            int num2 = 0;
+            for (int i = 0; i < numS.length(); i++){
+                if (numS.charAt(i) == '2'){
+                    num2++;
+                }
+            }
+            System.out.println("Amount integer 2's found: " + num2);
+        }
+        catch (Exception e){
+            System.out.println("Bad number");
+            System.exit(0);
+        }
+    }
+
     public static void exercise16(){
         // Starting with finding all primitive numbers under 100
         var prims = new ArrayList<Integer>();
