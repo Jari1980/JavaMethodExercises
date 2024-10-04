@@ -40,6 +40,9 @@ public class Main {
                     case 10:
                         exercise10();
                         break;
+                    case 11:
+                        exercise11();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -50,6 +53,37 @@ public class Main {
             }
         }
     }
+    public static void exercise11(){
+        var scan = new Scanner(System.in);
+        System.out.println("Rules for password:");
+        System.out.println("Least 8 characters");
+        System.out.println("Only letters and digits");
+        System.out.println("At least two digits");
+        System.out.println("Enter a password:");
+        String pass = scan.nextLine().toLowerCase();
+        if (pass.length() < 8){
+            System.out.println("Too short.");
+            System.exit(0);
+        }
+        char[] arr = new char[pass.length()];
+        int nums = 0;
+        for(int i = 0; i < pass.length(); i++){
+            if (Character.isDigit(pass.charAt(i))){
+                nums++;
+            }
+            if (!Character.isDigit(pass.charAt(i)) && !Character.isAlphabetic(pass.charAt(i))){
+                System.out.println("Non aplhabetic and non numeral character found, exiting");
+                System.exit(0);
+            }
+        }
+        if (nums >= 2){
+            System.out.println("Nice password");
+        }
+        else{
+            System.out.println("Not enough numbers");
+        }
+    }
+
     public static void exercise10(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a year: ");
