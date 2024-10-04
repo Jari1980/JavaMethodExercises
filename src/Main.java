@@ -60,6 +60,9 @@ public class Main {
                     case 15:
                         exercise15();
                         break;
+                    case 16:
+                        exercise16();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -70,6 +73,32 @@ public class Main {
             }
         }
     }
+    public static void exercise16(){
+        // Starting with finding all primitive numbers under 100
+        var prims = new ArrayList<Integer>();
+        for(int i = 2; i < 100; i++){
+            boolean isPrimitive = true;
+            for(int j = 2; j < i; j++){
+                if(i % j == 0) {
+                    isPrimitive = false;
+                }
+            }
+            if(isPrimitive){
+                prims.add(i);
+            }
+        }
+        for(int element : prims){
+            System.out.println(element); // seems ok
+        }
+        for (int i = 0; i < prims.size(); i++){
+            if (i < prims.size() - 1){
+                if (prims.get(i + 1) - (prims.get(i)) == 2){
+                    System.out.println("(" + prims.get(i) + ", " + prims.get(i + 1) + ")");
+                }
+            }
+        }
+    }
+
     public static void exercise15(){
         var weekD = LocalDate.now().getDayOfWeek();
         String weekDL = weekD.toString().toLowerCase();
