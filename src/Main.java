@@ -37,6 +37,9 @@ public class Main {
                     case 9:
                         exercise9();
                         break;
+                    case 10:
+                        exercise10();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -47,6 +50,34 @@ public class Main {
             }
         }
     }
+    public static void exercise10(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter a year: ");
+        try{
+            int year = scan.nextInt();
+            if (year % 100 == 0){
+                if (year % 400 == 0){
+                    System.out.println("Year " + year + " is a century and a leap year.");
+                }
+                else{
+                    System.out.println("Year " + year + " is a century and Not a leap year.");
+                }
+            }
+            else{
+                if (year % 4 == 0){
+                    System.out.println("Year " + year + " is a leap year.");
+                }
+                else{
+                    System.out.println("Year " + year + " is Not a leap year.");
+                }
+            }
+        }
+        catch (Exception e){
+            System.out.println("Bad Input, closing");
+            System.exit(0);
+        }
+    }
+
     public static void exercise9(){
         var scan = new Scanner(System.in);
         System.out.println("Enter first char: ");
