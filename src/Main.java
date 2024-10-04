@@ -11,7 +11,7 @@ public class Main {
         var scan = new Scanner(System.in);
         int num;
         while (true) {
-            System.out.println("Which exercise do you want to see, 1-23, :");
+            System.out.println("Which exercise do you want to see, 1-18, :");
             try {
                 num = scan.nextInt();
                 switch (num) {
@@ -66,6 +66,9 @@ public class Main {
                     case 17:
                         exercise17();
                         break;
+                    case 18:
+                        exercise18();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -76,6 +79,41 @@ public class Main {
             }
         }
     }
+    public static void exercise18(){
+        var scan = new Scanner(System.in);
+        boolean cons = false;
+        System.out.println("Input the first number: ");
+        try{
+            int num1 = scan.nextInt();
+            System.out.println("Second number: ");
+            try{
+                int num2 = scan.nextInt();
+                System.out.println("Third number: ");
+                try{
+                    int num3 = scan.nextInt();
+                    if(Math.abs(num1 - num2) == 1){
+                        if(Math.abs(num2 - num3) == 1){
+                            cons = true;
+                        }
+                    }
+                    System.out.println("The numbers are consecutive: " + cons);
+                }
+                catch(Exception e){
+                    System.out.println("Bad number");
+                    System.exit(0);
+                }
+            }
+            catch(Exception e){
+                System.out.println("Bad number");
+                System.exit(0);
+            }
+        }
+        catch(Exception e){
+            System.out.println("Bad number");
+            System.exit(0);
+        }
+    }
+
     public static void exercise17(){
         var scan = new Scanner(System.in);
         System.out.println("Enter a number with several integers: ");
