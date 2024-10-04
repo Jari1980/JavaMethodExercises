@@ -34,6 +34,9 @@ public class Main {
                     case 8:
                         exercise8();
                         break;
+                    case 9:
+                        exercise9();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -44,6 +47,34 @@ public class Main {
             }
         }
     }
+    public static void exercise9(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter first char: ");
+        char firstChar = (scan.next()).toLowerCase().charAt(0);
+        System.out.println("Enter second char: ");
+        char secondChar = (scan.next()).toLowerCase().charAt(0);
+        int char1Num = Character.getNumericValue(firstChar);
+        int char2Num = Character.getNumericValue(secondChar);
+        if (char2Num - char1Num <= 0){
+            System.out.println("Bad input, closing");
+            System.exit(0);
+        }
+        int charsInt = char2Num - char1Num - 1; // number of chars to be printed
+        int[] arr = new int[charsInt];
+        int counter = char1Num + 1;
+        for (int i = 0; i < charsInt; i++){
+            arr[i] = char1Num + 1 + i;//counter;
+            //counter++;
+        }
+        for (int i = 0; i < arr.length; i++){
+            //System.out.print((char)(arr[i] + '0') + " ");
+            System.out.print(Character.forDigit(arr[i], 36) + " ");
+            if (i % 20 == 0){
+                System.out.println();
+            }
+        }
+    }
+
     public static void exercise8(){
         var scan = new Scanner(System.in);
         double invested = 0;
