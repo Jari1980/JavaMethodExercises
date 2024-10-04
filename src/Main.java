@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -43,6 +44,9 @@ public class Main {
                     case 11:
                         exercise11();
                         break;
+                    case 12:
+                        exercise12();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -53,6 +57,24 @@ public class Main {
             }
         }
     }
+    public static void exercise12(){
+        var scan = new Scanner(System.in);
+        Random rand = new Random();
+        System.out.println("Enter n for a random nxn matrix: ");
+        try{
+            int num = scan.nextInt();
+            for (int i = 0; i < num; i++){
+                for (int j = 0; j < num; j++){
+                    System.out.print(rand.nextInt(2) + " ");
+                }
+                System.out.println();
+            }
+        }
+        catch (Exception e){
+            System.out.println("Not a valid number.");
+        }
+    }
+
     public static void exercise11(){
         var scan = new Scanner(System.in);
         System.out.println("Rules for password:");
