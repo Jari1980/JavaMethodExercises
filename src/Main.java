@@ -50,6 +50,9 @@ public class Main {
                     case 13:
                         exercise13();
                         break;
+                    case 14:
+                        exercise14();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -60,6 +63,20 @@ public class Main {
             }
         }
     }
+    public static void exercise14(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter length for side of Penatagon: ");
+        try{
+            double side = scan.nextDouble();
+            // Using formula from internet to calculate this
+            double area = (1.0 / 4.0) * Math.sqrt(5 * (5 + 2 * Math.sqrt(5)) * Math.pow(side, 2));
+            System.out.println("Area of Pentagon is: " + area);
+        }
+        catch (Exception e){
+            System.out.println("Bad input");
+        }
+    }
+
     public static void exercise13(){
         var scan = new Scanner(System.in);
         System.out.println("Enter first side of triangle: ");
