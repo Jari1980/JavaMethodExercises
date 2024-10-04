@@ -47,6 +47,9 @@ public class Main {
                     case 12:
                         exercise12();
                         break;
+                    case 13:
+                        exercise13();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -57,6 +60,38 @@ public class Main {
             }
         }
     }
+    public static void exercise13(){
+        var scan = new Scanner(System.in);
+        System.out.println("Enter first side of triangle: ");
+        try{
+            double s1 = scan.nextDouble();
+            System.out.println("Enter second side of triangle: ");
+            try{
+                double s2 = scan.nextDouble();
+                System.out.println("Enter third side of triangle: ");
+                try{
+                    double s3 = scan.nextDouble();
+                    // Herons formula
+                    double s = (s1 + s2 + s3) / 2;
+                    double area = Math.sqrt(s * (s - s1) * (s - s2) * (s - s3));
+                    System.out.println("Area of triange: " + area);
+                }
+                catch (Exception e){
+                    System.out.println("Bad input");
+                    System.exit(0);
+                }
+            }
+            catch (Exception e){
+                System.out.println("Bad input");
+                System.exit(0);
+            }
+        }
+        catch (Exception e){
+            System.out.println("Bad input");
+            System.exit(0);
+        }
+    }
+
     public static void exercise12(){
         var scan = new Scanner(System.in);
         Random rand = new Random();
