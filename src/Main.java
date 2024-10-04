@@ -1,3 +1,7 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -53,6 +57,9 @@ public class Main {
                     case 14:
                         exercise14();
                         break;
+                    case 15:
+                        exercise15();
+                        break;
                     default:
                         System.out.println("There is no such exercise");
                         break;
@@ -63,6 +70,22 @@ public class Main {
             }
         }
     }
+    public static void exercise15(){
+        var weekD = LocalDate.now().getDayOfWeek();
+        String weekDL = weekD.toString().toLowerCase();
+        String weekFormatted = weekDL.substring(0,1).toUpperCase() + weekDL.substring(1);
+        var month = LocalDate.now().getMonth();
+        String monthL = month.toString().toLowerCase();
+        String monthFormatted = monthL.substring(0,1).toUpperCase() + monthL.substring(1);
+        var date = LocalDate.now().getDayOfMonth();
+        var year = LocalDate.now().getYear();
+        var timeNow = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+        var formattedTime = timeNow.format(formatter);
+
+        System.out.println(weekFormatted + " " + monthFormatted + " " + date + ", " + year + " " + formattedTime);
+    }
+
     public static void exercise14(){
         var scan = new Scanner(System.in);
         System.out.println("Enter length for side of Penatagon: ");
